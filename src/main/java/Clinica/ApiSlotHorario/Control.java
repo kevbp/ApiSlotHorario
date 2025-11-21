@@ -33,6 +33,11 @@ public class Control {
     public List<SlotHorario> listar() {
         return serv.listar();
     }
+    
+    @GetMapping("/listarPorHorario/{idHor}")
+    public List<SlotHorario> listarPorHorario(@PathVariable Long idHor) {
+        return serv.listarPorHorario(idHor);
+    }
 
     @PutMapping("/actualizar/{id}")
     public SlotHorario actualizar(@PathVariable Long id, @RequestBody SlotHorario slo) {

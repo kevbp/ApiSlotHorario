@@ -22,6 +22,10 @@ public class Servicio {
         return repo.findAll();
     }
 
+    public List<SlotHorario> listarPorHorario(Long idHor) {
+        return repo.findByIdHor(idHor);
+    }
+
     public SlotHorario actualizar(Long id, SlotHorario slo) {
         return repo.findById(id).map(existing -> {
             existing.setIdHor(slo.getIdHor());
